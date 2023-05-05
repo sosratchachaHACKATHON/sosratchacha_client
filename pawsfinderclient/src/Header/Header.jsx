@@ -3,6 +3,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import styles from './Header.module.css';
 import { useNavigate } from 'react-router-dom';
+import MenuBar from './MenuBar';
 
 export default function Header() {
   const navigate = useNavigate();
@@ -22,7 +23,8 @@ export default function Header() {
           <div>
             <h2 onClick={navToHome}>Paws Finder</h2>
           </div>
-          <MenuIcon />
+          {/* <MenuIcon /> */}
+          <MenuBar />
         </div>
     </div>
   )
