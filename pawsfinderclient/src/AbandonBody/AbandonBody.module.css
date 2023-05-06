@@ -1,0 +1,56 @@
+.body_wrapper {
+    background-color: #fff;
+    padding: 20px;
+  }
+  
+  .custom_body {
+    border: 1px solid #ccc;
+  }
+  
+  .centered {
+    text-align: center;
+  }
+  
+  .image {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .date {
+    color: #999;
+    font-size: 1rem;
+  }
+  
+  .location {
+    color: #999;
+    font-size: 1rem;
+  }
+  
+  .comment_input {
+    width: 280px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  .send_button {
+    margin-left: 10px;
+    padding: 10px;
+    border: none;
+    background-color: #ccc;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .comment_section {
+    margin-top: 10px;
+  }
+  
+  .comment_item {
+    margin-top: 10px;
+  }

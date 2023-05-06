@@ -37,6 +37,7 @@ export default function Abandon() {
               return (
                 <div onClick={()=>navToBoard(item.id)} key={idx} style={{margin: '30px 70px'}}>
                 <AbandonBoard
+                boardType={item.boardType}
                 content={item.content}
                 id={item.id}
                 locationName={item.locationName}
