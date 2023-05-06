@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Main.module.css'
 import { Navigate, useNavigate } from 'react-router-dom'
+import { useSelector } from "react-redux"
 
 export default function Main() {
   
@@ -10,6 +11,7 @@ export default function Main() {
         navigate('/login');
     }
 
+    let isLoggedIn = useSelector((state) => state.loggedIn)
   return (
     <div>
         <div>
@@ -22,9 +24,11 @@ export default function Main() {
            />
         </div>
         <div style={{textAlign: 'center', marginTop: '60px'}}>
+            {isLoggedIn ?  
+            <></> : 
             <button className={styles.main_login} onClick={navToLogIn}>
                 로그인하러 가기!
-            </button>
+            </button>}
         </div>
     </div>
   )

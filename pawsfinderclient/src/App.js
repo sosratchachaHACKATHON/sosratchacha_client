@@ -1,6 +1,5 @@
 import './App.css';
 import { Routes, Route, Link } from 'react-router-dom'
-import MainHeader from './Header/MainHeader';
 import Header from './Header/Header';
 import Main from './Main/Main';
 import BottomNav from './BottomNav/BottomNav';
@@ -15,6 +14,7 @@ import Shop from './Shop/Shop';
 import Chatting from './Chatting/Chatting';
 
 function App() {
+
   return (
     <>
     <SnackbarProvider>
@@ -30,7 +30,6 @@ function App() {
           <Route path='/chatting' element={<Chatting />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/map" element={<Map />} />
-          {/* <Route path="/chatting" */}
         </Routes>
       <BottomNav />
     </SnackbarProvider>

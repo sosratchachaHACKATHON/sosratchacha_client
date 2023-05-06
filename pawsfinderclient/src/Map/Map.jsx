@@ -52,5 +52,5 @@ export default function Map() {
     });
   };
 
-  return <div id="map" style={{ width: "400px", height: "700px", margin: 'auto' }}></div>;
+  return <div id="map" style={{ width: "350px", height: "400px", margin: 'auto', marginTop: '40px' }}></div>;
 }

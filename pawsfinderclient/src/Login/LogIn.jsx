@@ -6,14 +6,18 @@ import styles from './Login.module.css'
 import axios from 'axios';
 import { useContext } from "react";
 import SnackbarContext from "../SnackBarContext";
-import Snackbar from '@mui/material/Snackbar';
-import Alert from '@mui/material/Alert';
+import { useDispatch, useSelector } from "react-redux"
+import { changeState } from "../store"
 
 export default function LogIn() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const { showSnackbar } = useContext(SnackbarContext);
+
+
+    let isLoggedIn = useSelector((state) => state.loggedIn ) 
 
     const handleChangeEmail = (e) => {
         setEmail(e.target.value);
@@ -29,11 +33,11 @@ export default function LogIn() {
                 email: email,
                 password: password,
             });
-        
             if(res.data.code !== 1000){
                 alert('로그인 실패. 아이디 비밀번호를 확인해주세요.');
                 return;
             }
+            dispatch(changeState());
             localStorage.setItem("token", res.data.result);
             navigate('/map');
             showSnackbar('로그인에 성공했습니다!');
