@@ -13,7 +13,6 @@ export default function AbandonBody () {
 
   useEffect(() => {
     axios.get(`http://54.180.93.68:8000/app/board/${id}`).then((res)=> {
-      console.log(res.data.result);
       setBodyResult(res.data.result);
     })
   }, [commentInput]);
@@ -23,7 +22,6 @@ export default function AbandonBody () {
     axios.post(`http://54.180.93.68:8000/app/board/${id}/comment?token=${myToken}`, {
       content: commentInput
     }).then(res =>{
-      console.log(res.data);
       setCommentInput('');
     });
   }

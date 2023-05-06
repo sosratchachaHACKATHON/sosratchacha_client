@@ -12,6 +12,7 @@ import AbandonBody from './AbandonBody/AbandonBody';
 import Missing from './Missing/Missing';
 import SnackbarProvider from './SnackBarProvider';
 import Shop from './Shop/Shop';
+import Chatting from './Chatting/Chatting';
 
 function App() {
   return (
@@ -19,7 +20,6 @@ function App() {
     <SnackbarProvider>
       <Header />
         <Routes>
-          <Route path="/detail" element={ <div>상세페이지임</div> } />
           <Route path="/" element={<Main />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/signUp" element={<SignUp />} />
@@ -27,8 +27,10 @@ function App() {
           <Route path="/abandon/:id" element={<AbandonBody />} />
           <Route path="/missing" element={<Missing />} />
           <Route path="/abandon:id" element={<AbandonBody />} />
+          <Route path='/chatting' element={<Chatting />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/map" element={<Map />} />
+          {/* <Route path="/chatting" */}
         </Routes>
       <BottomNav />
     </SnackbarProvider>

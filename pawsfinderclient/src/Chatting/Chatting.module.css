@@ -1,0 +1,27 @@
+.comment_input {
+    width: 280px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+.send_button {
+    margin-left: 10px;
+    padding: 10px;
+    border: none;
+    background-color: #ccc;
+    color: #fff;
+    cursor: pointer;
+  }
+
+.input_wrapper {
+    position: fixed;
+    bottom: 140px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+}

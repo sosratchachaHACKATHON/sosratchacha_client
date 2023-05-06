@@ -15,7 +15,6 @@ export default function Missing() {
       axios.get(`http://54.180.93.68:8000/app/board?token=${myToken}&boardType=lost`)
       .then(res => {
         setThrowList(res.data.result);
-        console.log(res.data.result);
       });
     }, []);
 

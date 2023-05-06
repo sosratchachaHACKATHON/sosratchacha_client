@@ -7,7 +7,6 @@ export default function BottomNav() {
     const navigate = useNavigate();
     const handleClickNav = (e) => {
         const category = e.target.innerText;
-        console.log(category);
         if (category == '유기') navigate('/abandon');
         else if (category == '지도') navigate('/map');
         else navigate('/missing');
