@@ -30,8 +30,8 @@ export default function MenuBar() {
       </AppBar>
       {/* 요소들 */}
       {open && (
-        <Box sx={{ p: 2, bgcolor: 'background.paper', position: 'absolute', width: "100px", right: '0px', height: '100vh', backgroundColor: '#ddd'}}>
-          <Typography onClick={()=>{navigate('/login'); setOpen(false);}} sx={{ fontSize: '18px', fontWeight: '700', textAlign: 'center'}}>로그인</Typography>
+        <Box sx={{ p: 2, bgcolor: 'background.paper', position: 'absolute', width: "100px", right: '0px', height: '110px', backgroundColor: '#ddd'}}>
+          <Typography onClick={()=>{navigate('/login'); setOpen(false);}} sx={{ fontSize: '18px', fontWeight: '700', textAlign: 'center', "&:hover": { bgColor: '#fff'}}}>로그인</Typography>
           <Typography onClick={()=>{navigate('/signUp'); setOpen(false);}} sx={{ fontSize: '18px', fontWeight: '700', textAlign: 'center', mt: '15px'}}>회원가입</Typography>
           <Typography onClick={()=>{navigate('/chatting'); setOpen(false);}} sx={{ fontSize: '18px', fontWeight: '700', textAlign: 'center', mt: '15px'}}>실시간 채팅</Typography>
         </Box>

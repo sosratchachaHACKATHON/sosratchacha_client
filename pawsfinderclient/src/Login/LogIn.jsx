@@ -1,14 +1,19 @@
 import React, { useState } from 'react'
 import Email from './Email'
 import Pwd from './Password'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import styles from './Login.module.css'
 import axios from 'axios';
-
+import { useContext } from "react";
+import SnackbarContext from "../SnackBarContext";
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 export default function LogIn() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+    const { showSnackbar } = useContext(SnackbarContext);
 
     const handleChangeEmail = (e) => {
         setEmail(e.target.value);
@@ -27,7 +32,11 @@ export default function LogIn() {
                 alert('로그인 실패. 아이디 비밀번호를 확인해주세요.')
             }
             return res.data.result
-        }).then((res)=>localStorage.setItem("token", res));
+        }).then((res) => {
+            localStorage.setItem("token", res);
+            navigate('/map');
+            showSnackbar('로그인에 성공했습니다!');
+        });
       }
 
     return (

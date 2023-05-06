@@ -8,7 +8,6 @@ import AbandonBoard from '../Abandon/AbandonBoard';
 export default function Missing() {
     const navigate = useNavigate();
     const [date, setDate] = useState('');
-    const [token, setToken] = useState('');
     const [throwList, setThrowList] = useState([]);
     
     useEffect(() => {
@@ -26,13 +25,20 @@ export default function Missing() {
   
   return (
     <div style={{marginBottom: '120px'}}>
-        <div className={styles.abandon_top} style={{ display: 'flex', alignItems: 'center' }}>
-            <label style={{marginRight: '16px'}}>날짜</label>
+        <div className={styles.abandon_top} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <label style={{marginRight: '16px', fontSize: '18px', fontWeight: '700'}}>날짜</label>
             <input 
             className={styles.abandon_input}
             type='date'
             value={date}
             onChange={(e)=>setDate(e.target.value)}
+            style={{
+              padding: '8px',
+              borderRadius: '4px',
+              border: '1px solid #ddd',
+              fontSize: '14px',
+              width: '150px',
+            }}
             />
         </div>
             {throwList && throwList.map((item, idx) => {
