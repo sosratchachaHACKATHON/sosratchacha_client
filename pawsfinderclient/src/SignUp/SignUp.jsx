@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import axios from 'axios';
 import styles from './SignUp.module.css';
+import { API } from '../API/API'
 
 export default function SignUp() {
 
@@ -28,20 +29,16 @@ export default function SignUp() {
 
   useEffect(() => {
     pwd === pwdCheck && pwd != '' && pwdCheck != '' ? setIsSamePwd(true) : setIsSamePwd(false);
+    console.log(`${API.signUp}`)
   }, [pwd, pwdCheck]);
 
-  const handleImgInput = (event) => {
-    setImage(()=>event.target.files[0]);
-  }
-
   const handleSignUpBtn = async() => {
-    await axios.post('/api/member', {
+    await axios.post("http://54.180.93.68:8000/app/user/sign-up", {
       name: name,
-      nickName: nickName,
+      nickname: nickName,
       email: email,
       password: pwd,
-      imageUrl: "asdf"
-    }).then(req=>console.log(req));
+    }).then(res=>console.log(res)).then((res)=>res.data.isSuccess ? alert('회원가입이 완료되었습니다!') : alert(res.data.message)).then(()=>{setName('');});
   }
 
 return (

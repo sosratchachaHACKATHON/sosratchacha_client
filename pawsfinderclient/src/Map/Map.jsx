@@ -27,7 +27,7 @@ export default function Map() {
   const mapscript = () => {
     let container = document.getElementById("map");
     let options = {
-      center: new kakao.maps.LatLng(37.59901975210991, 126.86516719830612),
+      center: new kakao.maps.LatLng(37.60001975210991, 126.86556719830612),
       level: 3,
     };
 

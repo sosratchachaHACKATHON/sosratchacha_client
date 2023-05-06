@@ -8,9 +8,9 @@ export default function BottomNav() {
     const handleClickNav = (e) => {
         const category = e.target.innerText;
         console.log(category);
-        if (category == '유기') navigate('/');
+        if (category == '유기') navigate('/abandon');
         else if (category == '지도') navigate('/map');
-        else navigate('/');
+        else navigate('/missing');
     }
   return (
     <div>

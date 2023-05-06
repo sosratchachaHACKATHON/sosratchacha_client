@@ -21,7 +21,6 @@ export default function MenuBar() {
       <AppBar position="sticky" sx={{ bgcolor: '#ddd' }}>
           <IconButton
             size="large"
-            edge="middle"
             color="inherit"
             aria-label="menu"
             onClick={handleMenuClick} // 클릭 이벤트 처리
