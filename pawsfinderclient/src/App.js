@@ -11,6 +11,7 @@ import Abandon from './Abandon/Abandon';
 import AbandonBody from './AbandonBody/AbandonBody';
 import Missing from './Missing/Missing';
 import SnackbarProvider from './SnackBarProvider';
+import Shop from './Shop/Shop';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/abandon/:id" element={<AbandonBody />} />
           <Route path="/missing" element={<Missing />} />
           <Route path="/abandon:id" element={<AbandonBody />} />
+          <Route path="/shop" element={<Shop />} />
           <Route path="/map" element={<Map />} />
         </Routes>
       <BottomNav />

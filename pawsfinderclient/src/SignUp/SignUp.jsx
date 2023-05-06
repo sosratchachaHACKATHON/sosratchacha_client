@@ -29,7 +29,6 @@ export default function SignUp() {
 
   useEffect(() => {
     pwd === pwdCheck && pwd != '' && pwdCheck != '' ? setIsSamePwd(true) : setIsSamePwd(false);
-    console.log(`${API.signUp}`)
   }, [pwd, pwdCheck]);
 
   const handleSignUpBtn = async() => {
@@ -38,7 +37,10 @@ export default function SignUp() {
       nickname: nickName,
       email: email,
       password: pwd,
-    }).then(res=>console.log(res)).then((res)=>res.data.isSuccess ? alert('회원가입이 완료되었습니다!') : alert(res.data.message)).then(()=>{setName('');});
+    })
+    .then((res) => {
+      res.data.isSuccess ? alert('회원가입이 완료되었습니다!') : alert(res.data.message)
+      setName(''); setPwd(''); setpwdCheck(''); setEmail(''); setNickName('');})
   }
 
 return (
@@ -113,11 +115,6 @@ return (
         )}
       </div>
     </div>
-    <div>{image != null ? image.name : ''}</div>
-    {/* <Button variant="contained" component="label" sx={{ m: "16px" }}>
-        사진 업로드
-        <input hidden accept="image/*" multiple type="file" onChange={handleImgInput}/>
-    </Button> */}
     <Stack direction="row" spacing={2} sx={{ mt: 5 }}>
       <Button variant="contained" disabled={ableBtn} onClick={handleSignUpBtn}>동의하고 가입하기</Button>
     </Stack>

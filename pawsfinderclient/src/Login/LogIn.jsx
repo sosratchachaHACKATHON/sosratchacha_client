@@ -34,7 +34,6 @@ export default function LogIn() {
                 alert('로그인 실패. 아이디 비밀번호를 확인해주세요.');
                 return;
             }
-        
             localStorage.setItem("token", res.data.result);
             navigate('/map');
             showSnackbar('로그인에 성공했습니다!');
