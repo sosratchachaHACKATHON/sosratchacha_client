@@ -1,0 +1,11 @@
+.board_wrapper {
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 5px #ccc;
+    padding: 16px;
+    border-radius: 6px;
+}
+
+.board_img {
+    box-shadow: 0px 0px 5px #ccc;
+
+}

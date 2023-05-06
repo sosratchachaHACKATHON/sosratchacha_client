@@ -1,23 +1,22 @@
 import React, { useEffect } from 'react'
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import AbandonBody from '../AbandonBody/AbandonBody';
-import { useParams } from 'react-router-dom';
+import styles from './AbandonBoard.module.css'
 
 export default function AbandonBoard({content, id, locationName, type, url, lat, lng}) {
 
   return (
-    <div>
+    <div className={styles.board_wrapper}>
     <div style={{textAlign: 'center'}}>
         <img 
         width="200px"
         height="200px"
         src={url}
+        className={styles.board_img}
         /> 
         {/* <FavoriteBorderIcon /> */}
     </div>
     <div>
-        <div>제목: {content}</div>
-        <div>위치 : {locationName}</div>
+        <h3>제목: {content}</h3>
+        <h3>위치 : {locationName}</h3>
     </div>
     </div>
   )
