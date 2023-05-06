@@ -21,7 +21,7 @@ export default function Missing() {
     }, []);
 
     const navToBoard = (id) => {
-      navigate(`/missing/${id}`);
+      navigate(`/abandon/${id}`);
     }
   
   return (

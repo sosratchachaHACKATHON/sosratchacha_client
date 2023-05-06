@@ -5,12 +5,6 @@ import { useParams } from 'react-router-dom';
 
 export default function AbandonBoard({content, id, locationName, type, url, lat, lng}) {
 
-  useEffect(() => {
-
-  }, [])
-
-  
-
   return (
     <div>
     <div style={{textAlign: 'center'}}>
