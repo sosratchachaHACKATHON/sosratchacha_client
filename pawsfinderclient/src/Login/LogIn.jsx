@@ -29,10 +29,7 @@ export default function LogIn() {
             return res.data.result
         }).then((res)=>localStorage.setItem("token", res));
       }
-    
-    const InputArea = styled.div`
-        width: 100vw; display: flex; justify-content: center;
-    `
+
     return (
     <div>
         <h2 style={{marginLeft: '20px', width: '100vw', textAlign: 'center'}}>로그인</h2>
