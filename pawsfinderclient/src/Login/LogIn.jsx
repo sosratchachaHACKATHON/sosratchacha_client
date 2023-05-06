@@ -27,7 +27,11 @@ export default function LogIn() {
                 alert('로그인 실패. 아이디 비밀번호를 확인해주세요.')
             }
             return res.data.result
-        }).then((res)=>localStorage.setItem("token", res));
+        }).then((res)=>{
+            window.location.href=`/map`
+            localStorage.setItem("token", res)
+            
+        });
       }
 
     return (
