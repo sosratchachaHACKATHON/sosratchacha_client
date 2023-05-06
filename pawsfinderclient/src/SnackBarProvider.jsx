@@ -26,7 +26,7 @@ const SnackbarProvider = ({ children }) => {
       {children}
       <Snackbar
         open={isOpen}
-        autoHideDuration={1500}
+        autoHideDuration={2000}
         onClose={handleClose}
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
         severity={severity}

@@ -24,20 +24,24 @@ export default function LogIn() {
     }
 
     const handleSignUpBtn = async() => {
-        await axios.post("http://54.180.93.68:8000/app/user/login", {
-          email: email,
-          password: password,
-        }).then(res=>{
-            if(res.data.code == 4007){
-                alert('로그인 실패. 아이디 비밀번호를 확인해주세요.')
+        try {
+            const res = await axios.post("http://54.180.93.68:8000/app/user/login", {
+                email: email,
+                password: password,
+            });
+        
+            if(res.data.code !== 1000){
+                alert('로그인 실패. 아이디 비밀번호를 확인해주세요.');
+                return;
             }
-            return res.data.result
-        }).then((res) => {
-            localStorage.setItem("token", res);
+        
+            localStorage.setItem("token", res.data.result);
             navigate('/map');
             showSnackbar('로그인에 성공했습니다!');
-        });
-      }
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     return (
     <div>
