@@ -23,7 +23,7 @@ function App() {
       <Route path="/abandon" element={<Abandon />} />
       <Route path="/abandon/:id" element={<AbandonBody />} />
       <Route path="/missing" element={<Missing />} />
-      <Route path="/missing:id" element={<Missing />} />
+      <Route path="/abandon:id" element={<AbandonBody />} />
       <Route path="/map" element={<Map />} />
     </Routes>
       <BottomNav />
